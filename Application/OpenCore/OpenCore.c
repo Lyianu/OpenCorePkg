@@ -122,7 +122,7 @@ OcMain (
   OC_PRIVILEGE_CONTEXT  *Privilege;
 
   EFI_PHYSICAL_ADDRESS BadRamPatch1 = 0x7e000000;
-  EFI_PHYSICAL_ADDRESS BadRamPatch2 = 0x87000000;
+  EFI_PHYSICAL_ADDRESS BadRamPatch2 = 0x88000000;
   gBS -> AllocatePages(2, 8, 20480, & BadRamPatch1);
   gBS -> AllocatePages(2, 8, 20480, & BadRamPatch2);
   DEBUG ((DEBUG_INFO, "OC: OcMiscEarlyInit...\n"));
