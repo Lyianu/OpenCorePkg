@@ -121,8 +121,10 @@ OcMain (
   EFI_STATUS            Status;
   OC_PRIVILEGE_CONTEXT  *Privilege;
 
-  EFI_PHYSICAL_ADDRESS Addr = 0x7e000000;
-  gBS -> AllocatePages(2, 8, 51200, & Addr);
+  EFI_PHYSICAL_ADDRESS BadRamPatch1 = 0x7e000000;
+  EFI_PHYSICAL_ADDRESS BadRamPatch2 = 0x87000000;
+  gBS -> AllocatePages(2, 8, 20480, & BadRamPatch1);
+  gBS -> AllocatePages(2, 8, 20480, & BadRamPatch2);
   DEBUG ((DEBUG_INFO, "OC: OcMiscEarlyInit...\n"));
   Status = OcMiscEarlyInit (
              Storage,
