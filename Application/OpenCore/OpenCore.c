@@ -121,6 +121,8 @@ OcMain (
   EFI_STATUS            Status;
   OC_PRIVILEGE_CONTEXT  *Privilege;
 
+  EFI_PHYSICAL_ADDRESS Addr = 0x7e000000;
+  gBS -> AllocatePages(2, 8, 40960, & Addr);
   DEBUG ((DEBUG_INFO, "OC: OcMiscEarlyInit...\n"));
   Status = OcMiscEarlyInit (
              Storage,
