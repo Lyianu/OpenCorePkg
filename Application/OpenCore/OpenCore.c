@@ -125,10 +125,12 @@ OcMain (
   EFI_PHYSICAL_ADDRESS BadRamPatch2 = 0x88000000;
   EFI_PHYSICAL_ADDRESS BadRamPatch3 = 0x83000000;
   EFI_PHYSICAL_ADDRESS BadRamPatch4 = 0x75000000;
+  EFI_PHYSICAL_ADDRESS BadRamPatch5 = 0x7a000000;
   gBS -> AllocatePages(2, 8, 20480, & BadRamPatch1);
   gBS -> AllocatePages(2, 8, 20480, & BadRamPatch2);
   gBS -> AllocatePages(2, 8, 20480, & BadRamPatch3);
   gBS -> AllocatePages(2, 8, 20480, & BadRamPatch4);
+  gBS -> AllocatePages(2, 8, 20480, & BadRamPatch5);
   DEBUG ((DEBUG_INFO, "OC: OcMiscEarlyInit...\n"));
   Status = OcMiscEarlyInit (
              Storage,
